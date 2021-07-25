@@ -70,11 +70,19 @@ router.post('/signin',(request,response)=>{
         else{
             if(users.length == 0){
                 result['status']='error'
-                result['status']='You are not registerd Please Sign up and try again'
+                result['status']='user does not exitsts'
              }
              else{
                
                  const user = users[0]
+                 if(user['status']==0){
+                    result['status']='error'
+                    result['status']='You have not verified your account'
+                 }else if(users['status']==2){
+                    result['status']='error'
+                    result['error'] = 'your account is suspended. please contact administrator'
+                }
+                else{
                  const token = jwt.sign({id: user['id']},config.secret)
                  result['status'] = 'success'
                  result['data']={
@@ -85,6 +93,7 @@ router.post('/signin',(request,response)=>{
                      phone:user['phone'],
                      addres:user['addres']
                  }
+                }
              }
              response.send(result)
         }
