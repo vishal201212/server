@@ -33,3 +33,5 @@ create table
  email varchar(50),
  feedback varchar(500)
 );
+
+ALTER TABLE feedback ADD date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
