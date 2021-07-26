@@ -25,3 +25,11 @@ create table
 
 ALTER TABLE contactbook
 ADD CONSTRAINT email UNIQUE (email);
+
+--create table forFeedbac form--
+create table
+ feedback(id integer primary key auto_increment,
+ fname varchar(30),
+ email varchar(50),
+ feedback varchar(500)
+);

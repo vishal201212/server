@@ -5,6 +5,7 @@ const app = express()
 app.use(cors('*'))
 const routerUser = require('./user')
 const routerContact = require('./contactbook')
+const routerFeedback = require('./feedback')
 const bodyparser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const config = require('./secret')
@@ -19,6 +20,8 @@ if(request.url == '/signup'||
 request.url == '/signin'||
 request.url == '/getuser'||
 request.url == '/confirm'||
+request.url == '/addfeedback'||
+request.url == '/getfeedback'||
 request.url == '/getcontact' ||
 request.url == '/addcontact')
 {
@@ -47,6 +50,7 @@ else{
 
 app.use(routerUser);
 app.use(routerContact);
+app.use(routerFeedback);
 
 
 
