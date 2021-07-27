@@ -16,7 +16,7 @@ router.post('/signup',(request,response)=>{
     db.execute(statement,(error,data)=>{
         response.send(utils.errordata(error,data));
 
-        mailer.senEmail('confirm_account.html','Welcome to the Earth',email,(error,info )=>{
+        mailer.senEmail('confirm_account.html','Account Confirmation',email,(error,info )=>{
         })
 
     })
@@ -38,6 +38,9 @@ router.patch('/confirm',(request,response)=>{
     const statement = `update user set status=1 where email = '${email }'`
     db.execute(statement,(error,data)=>{
         response.send(utils.errordata(error,data));
+        mailer.senEmail('confirmsuccess.html','Welcome to Cypher',email,(error,info )=>{
+
+        })
     })
 
 })
