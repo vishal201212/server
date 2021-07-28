@@ -6,6 +6,7 @@ app.use(cors('*'))
 const routerUser = require('./user')
 const routerContact = require('./contactbook')
 const routerFeedback = require('./feedback')
+const routerBlog = require('./blog')
 const bodyparser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const config = require('./secret')
@@ -23,7 +24,9 @@ request.url == '/confirm'||
 request.url == '/addfeedback'||
 request.url == '/getfeedback'||
 request.url == '/getcontact' ||
-request.url == '/addcontact')
+request.url == '/addcontact'||
+request.url == '/addblog'||
+request.url == '/getblog')
 {
     next()
 }
@@ -51,7 +54,7 @@ else{
 app.use(routerUser);
 app.use(routerContact);
 app.use(routerFeedback);
-
+app.use(routerBlog)
 
 
 

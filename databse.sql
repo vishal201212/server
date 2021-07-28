@@ -35,3 +35,6 @@ create table
 );
 
 ALTER TABLE feedback ADD date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+create table blog(id integer primary key auto_increment,email varchar(50),blog varchar(5000));
+
