@@ -25,8 +25,11 @@ request.url == '/addfeedback'||
 request.url == '/getfeedback'||
 request.url == '/getcontact' ||
 request.url == '/addcontact'||
-request.url == '/addblog'||
-request.url == '/getblog')
+request.url == '/getblog'  ||
+request.url == '/deleteblog'  ||
+request.url == '/addblog')
+
+
 {
     next()
 }

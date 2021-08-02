@@ -36,5 +36,8 @@ create table
 
 ALTER TABLE feedback ADD date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
-create table blog(id integer primary key auto_increment,email varchar(50),blog varchar(5000));
+create table blog(id integer primary key auto_increment,title varchar(100),email varchar(50),blog varchar(5000));
 
+ALTER TABLE blog ADD date = DATE;
+
+ select user.firstname,user.lastname,blog.blog,blog.title,blog.date from user cross join blog;

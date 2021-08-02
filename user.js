@@ -57,6 +57,7 @@ router.get('/viewuser/',(request,response)=>{
 })
 
 router.post('/signin',(request,response)=>{
+    
     const{email,password}=request.body
     const encryptpassword = '' + crypto.SHA256(password)
 
