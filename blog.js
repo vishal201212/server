@@ -18,7 +18,7 @@ router.post('/addblog',(request,response)=>{
 router.get('/getblog',(request,response)=>{
     
    
-    const statement = `select user.firstname,user.lastname,blog.blog,blog.title,blog.date from user cross join blog;`
+    const statement = `select * from blog;`
     db.execute(statement,(error,data)=>{
         response.send(utils.errordata(error,data));
     })
