@@ -35,4 +35,15 @@ router.post('/deleteblog',(request,response)=>{
     })
 
 })
+
+
+router.patch('/updateblog',(request,response)=>{
+    
+    const {id,blog}=request.body
+    const statement = `update blog set blog='${blog}' where id='${id}'`
+    db.execute(statement,(error,data)=>{
+        response.send(utils.errordata(error,data));
+    })
+
+})
 module.exports = router

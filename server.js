@@ -27,6 +27,8 @@ request.url == '/getcontact' ||
 request.url == '/addcontact'||
 request.url == '/getblog'  ||
 request.url == '/deleteblog'  ||
+request.url == '/updateblog'  ||
+
 request.url == '/addblog')
 
 
