@@ -18,11 +18,10 @@ router.post('/addblog',(request,response)=>{
 router.get('/getblog',(request,response)=>{
     
    
-    const statement = `select * from blog;`
+    const statement = `select id,email,blog,title,DATE_FORMAT(date,'%y-%m-%d') AS date from blog;`
     db.execute(statement,(error,data)=>{
         response.send(utils.errordata(error,data));
     })
-
 })
 
 
